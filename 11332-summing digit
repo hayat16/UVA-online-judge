@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    long long int n,i,t,p;
+    while(scanf("%lld",&n)==1)
+    {
+        if(n==0)
+        {
+            break;
+        }
+        else
+        {
+            p=n;
+            while(1)
+            {
+                long long int res=0,sum=0;
+                while(n>0)
+                {
+                    res=n%10;
+                    sum=sum+res;
+                    n=n/10;
+                }
+                n=sum;
+                if(n<10)
+                {
+                    break;
+                }
+            }
+            printf("%lld\n",n);
+        }
+    }
+    return 0;
+}
