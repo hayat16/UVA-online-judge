@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+    long long int i,n,r,a[10000],j,p,flag;
+    while( scanf("%lld%lld",&n,&r)==2)
+
+    {
+        for(i=0; i<r; i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        p=0;
+        flag=0;
+        for(i=1; i<=n; i++)
+        {
+            p=i;
+            long long int f=0;
+            for(j=0; j<r; j++)
+            {
+                if(p==a[j])
+                {
+                    f=1;
+                    break;
+                }
+            }
+            if(f==0)
+            {
+                printf("%lld ",p);
+                flag=1;
+
+            }
+
+        }
+        if(flag==0)
+        {
+            printf("*");
+
+        }
+        printf("\n");
+    }
+    return 0;
+}
