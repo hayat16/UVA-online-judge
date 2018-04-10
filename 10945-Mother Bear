@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+#include<string.h>
+#include<algorithm>
+int main()
+{
+    string s,s1,s2;
+    int i;
+    while(getline(cin,s))
+    {
+        int l=s.size();
+        if(s=="DONE")
+        {
+            break;
+        }
+        for(i=0; i<l; i++)
+        {
+            if( isalpha(s[i]))
+                s1+=s[i];
+        }
+
+        int len=s1.size();
+        for(i=0; i<len; i++)
+        {
+            if(isupper(s1[i]))
+            {
+                s1[i]=s1[i]+32;
+
+            }
+        }
+        s2=s1;
+        reverse(s2.begin(),s2.end());
+
+        if(s1==s2)
+        {
+            cout<<"You won't be eaten!"<<endl;
+        }
+        else
+        {
+            cout<<"Uh oh.."<<endl;
+        }
+        s.clear();
+        s1.clear();
+        s2.clear();
+
+    }
+    return 0;
+}
