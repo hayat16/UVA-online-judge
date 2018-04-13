@@ -1,0 +1,28 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+#include<math.h>
+int main()
+{
+    double d,u,v;
+    int test,c=0;
+    double A,t1,t2,difference;
+    cin>>test;
+    while(test--)
+    {
+        cin>>d>>v>>u;
+        if(v==0 || v>=u) //if we find riverflow 0 or greater than boatflow than we can't determine
+        {
+            cout<<"Case "<<++c<<": "<<"can't determine"<<endl;
+        }
+        else
+        {
+            A=sqrt(u*u-v*v);// using pythagoras formula
+            t1=(d/A); //using s=vt formula
+            t2=(d/u);//using s=vt || t=s/v formula.Here v=boatvelocity.
+            difference=t1-t2;
+            cout<<"Case "<<++c<<": "<<fixed<<setprecision(3)<<difference<<endl;
+        }
+    }
+    return 0;
+}
