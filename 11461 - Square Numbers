@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+#include<math.h>
+int main()
+{
+    long long int a,b,i,c,x;
+    while(cin>>a>>b)
+    {
+        if(a==0 && b==0)
+        {
+            break;
+        }
+        c=0;
+        for(i=a;i<=b;i++)
+        {
+           x=sqrt(i);
+           if(x*x==i)
+           {
+               c++;
+           }
+
+
+        }
+        cout<<c<<endl;
+
+    }
+    return 0;
+}
