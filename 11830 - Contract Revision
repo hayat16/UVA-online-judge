@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+#include<string.h>
+#include<algorithm>
+int main()
+{
+    char a;
+    string s,s2;
+    int i,l;
+    while(cin>>a>>s)
+    {
+        if(a=='0' && s=="0")
+        {
+            break;
+        }
+        l=s.size();
+
+        for(i=0; i<l; i++)
+        {
+            if(s[i]!=a)
+            {
+                s2+=s[i];
+
+            }
+        }
+        int c=count(s2.begin(),s2.end(),'0');
+        int l2=s2.size();
+        if(s2=="")
+        {
+            cout<<"0"<<endl;
+        }
+        else if(c==l2)
+        {
+            cout<<"0"<<endl;
+        }
+        else
+        {
+            cout<<s2<<endl;
+        }
+        s.clear();
+        s2.clear();
+    }
+    return 0;
+}
