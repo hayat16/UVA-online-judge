@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    string s;
+    while(cin>>s)
+    {
+        int i,sum1=0,sum2=0;
+        if(s=="0")
+        {
+            break;
+        }
+    for(i=0; i<s.size(); i++)
+    {
+        if(i%2==0)
+        {
+            sum1=sum1+s[i]-48;
+        }
+        if(i%2!=0)
+        {
+            sum2=sum2+s[i]-48;
+        }
+    }
+    int diff=sum1-sum2;
+    if(diff%11==0)
+    {
+        cout<<s<<" is a multiple of 11."<<endl;
+    }
+    else
+    {
+        cout<<s<<" is not a multiple of 11."<<endl;
+    }
+    }
+    return 0;
+}
