@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int test;
+    string s;
+    cin>>test;
+    while(test--)
+    {
+        cin>>s;
+        int l=s.size();
+        if(l==5)
+        {
+            cout<<"3"<<endl;
+        }
+        else if(s[0]=='o'&& s[1]=='n'
+                || s[1]=='n' && s[2]=='e'
+                 || s[0]=='o' && s[2]=='e'
+                 || s[0]=='o' && s[1]=='e'
+                 || s[0]=='o' && s[2]=='n' )
+        {
+            cout<<"1"<<endl;
+        }
+        else if(s=="one")
+        {
+            cout<<"1"<<endl;
+        }
+        else
+        {
+            cout<<"2"<<endl;
+        }
+    }
+    return 0;
+}
