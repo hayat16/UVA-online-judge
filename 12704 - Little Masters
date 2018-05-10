@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+#include<math.h>
+#include<iomanip>
+int main()
+{
+   long long int test,i,x=0,y=0,r=0,a;
+    double srt,longest,shortest;
+    cin>>test;
+    while(test--)
+    {
+        cin>>x>>y>>r;
+        a=pow((x-0),2)+pow((y-0),2);
+        srt=sqrt(a);
+        longest=srt+r;
+        shortest=r-srt;
+        cout<<setprecision(2)<<fixed;
+        cout<<shortest<<" "<<longest<<endl;
+    }
+    return 0;
+}
