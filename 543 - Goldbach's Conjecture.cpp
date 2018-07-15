@@ -46,7 +46,6 @@ int main()
                 x=n-i;
                 if(mark[x]==0)
                 {
-                    int diff=x-i;
                     cout<<n<<" = "<<i<<" + "<<x<<endl;
                     flag=1;
                     break;
