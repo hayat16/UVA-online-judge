@@ -9,7 +9,7 @@ void sieve(int n)
 {
     int i,j;
     int limit=sqrt(n * 1.)+2;
-    mark[1]=0;
+    mark[1]=0;//aikane 1 k prime dorse
     for(i=4; i<=n; i+=2)
     {
         mark[i]=1;
