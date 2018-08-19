@@ -1,0 +1,110 @@
+#include<iostream>
+#include<math.h>
+#include<bits/stdc++.h>
+using namespace std;
+bool mark[10000007];
+int prime[300000];
+int nprime;
+void sieve(int n)
+{
+    int i,j;
+    int limit=sqrt(n * 1.)+2;
+    mark[0]=1;
+    mark[1]=1;
+    for(i=4; i<=n; i+=2)
+    {
+        mark[i]=1;
+    }
+    prime[nprime++]=2;
+    for(i=3; i<=n; i++)
+    {
+        if(mark[i]==0)
+        {
+            prime[nprime++]=i;
+            if(i<=limit)
+            {
+                for(j=i*i; j<=n; j+=i*2)
+                {
+                    mark[j]=1;
+                }
+            }
+        }
+    }
+
+}
+int main()
+{
+    sieve(1000000);
+    long long int i,j,t,c=0;
+    char x;
+    string s;
+    map<char,int>mp;
+    cin>>t;
+    for(i=0; i<t; i++)
+    {
+        cin>>s;
+        for(j=0; j<s.size(); j++)
+        {
+            if(mp.count(s[j])==0)
+            {
+                mp[s[j]]=1;
+
+            }
+            else
+            {
+                mp[s[j]]=mp[s[j]]+1;
+
+            }
+        }
+        cout<<"Case "<<++c<<": ";
+        int flag=0;
+        for(j=48; j<=57; j++)
+        {
+            if(mark[mp[j]]==0)
+            {
+                x=j;
+                cout<<x;
+                flag=1;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        for(j=65; j<=90; j++)
+        {
+            if(mark[mp[j]]==0)
+            {
+                x=j;
+                cout<<x;
+                flag=1;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        for(j=97; j<=122; j++)
+        {
+            if(mark[mp[j]]==0)
+            {
+                x=j;
+                cout<<x;
+                flag=1;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        if(flag==0)
+        {
+            cout<<"empty";
+        }
+        cout<<endl;
+        s.clear();
+        mp.clear();
+    }
+    return 0;
+
+}
