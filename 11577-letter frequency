@@ -1,0 +1,52 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<char,int>mp;
+    long long int t,i,j;
+    char x,y;
+    string s;
+    cin>>t;
+    getchar();
+    while(t--)
+    {
+        long long int max=0;
+        getline(cin,s);
+        for(i=0; i<s.size(); i++)
+        {
+            if(isupper(s[i]))
+                s[i]=s[i]+32;
+        }
+        for(i=0; i<s.size(); i++)
+        {
+            if(mp[s[i]]==0)
+            {
+                mp[s[i]]=1;
+            }
+            else
+            {
+                mp[s[i]]=mp[s[i]]+1;
+            }
+        }
+        for(i=97; i<=122; i++)
+        {
+            if(mp[i]>max)
+            {
+                max=mp[i];
+            }
+        }
+        for(i=97; i<=122; i++)
+        {
+            if(mp[i]==max )
+            {
+                x=i;
+                cout<<x;
+            }
+        }
+        cout<<endl;
+        s.clear();
+        mp.clear();
+    }
+    return 0;
+}
