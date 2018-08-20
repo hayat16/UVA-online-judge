@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+#include<bits/stdc++.h>
+int main()
+{
+    map<string,string>mp;
+    map<string,string>::iterator it;
+    long long int i,j,n,Q;
+    string s,s1,s2;
+    cin>>n;
+    getchar();
+    for(i=0; i<n; i++)
+    {
+        for(i=0; i<n; i++)
+        {
+            getline(cin,s);
+            getline(cin,s1);
+            mp[s]=s1;
+        }
+    }
+    cin>>Q;
+    getchar();
+    while(Q--)
+    {
+        getline(cin,s2);
+        cout<<mp[s2]<<endl;
+    }
+    return 0;
+}
