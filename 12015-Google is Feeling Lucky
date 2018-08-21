@@ -1,0 +1,33 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int i,t,V,c=0,p;
+    string s;
+    vector<pair<int,string> >vec;
+    vector<pair<int,string> >vec1;
+    cin>>t;
+    while(t--)
+    {
+        for(i=0; i<=9; i++)
+        {
+            cin>>s>>V;
+            vec.push_back(make_pair(V,s));//first we put the value of relevance & then put the URL address 
+            vec1.push_back(make_pair(V,s));
+        }
+        sort(vec.begin(),vec.end());
+        p=vec[9].first;
+        cout<<"Case #"<<++c<<":"<<endl;
+        for(i=0; i<=9; i++)
+        {
+            if(vec1[i].first==p)
+            {
+                cout<<vec1[i].second<<endl;
+            }
+        }
+        vec.clear();
+        vec1.clear();
+    }
+    return 0;
+}
