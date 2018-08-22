@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+long long int A[100000000];
+int main()
+{
+    long long int i,n=0,t,sum=0;
+    string s;
+    cin>>t;
+    for(i=0; i<t; i++)
+    {
+        cin>>s;
+        if(s=="donate")
+        {
+            cin>>A[n];
+            sum=sum+A[n];
+            n++;
+        }
+        else
+        {
+            cout<<sum<<endl;
+        }
+    }
+    return 0;
+}
+
+
