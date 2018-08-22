@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+long long int A[100];
+int main()
+{
+    long long int i,t,max,min,c=0;
+    cin>>t;
+    while(t--)
+    {
+        max=0;
+        min=99999;
+        memset(A,0,sizeof A);
+        for(i=0; i<3; i++)
+        {
+            cin>>A[i];
+            if(A[i]>max)
+            {
+                max=A[i];
+            }
+            if(A[i]<min)
+            {
+                min=A[i];
+            }
+        }
+        for(i=0; i<3; i++)
+        {
+            if(A[i]!=max && A[i]!=min)
+            {
+                cout<<"Case "<<++c<<": " <<A[i]<<endl;
+            }
+        }
+
+    }
+    return 0;
+}
