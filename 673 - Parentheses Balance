@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    stack<char>st;
+    string s,s1;
+    long long int i,t;
+    cin>>t;
+    getchar();
+    while(t--)
+    {
+        getline(cin,s);
+        for(i=0;i<s.size();i++)
+        {
+            if(s[i]=='(' || s[i]==')' || s[i]=='[' || s[i]==']')
+            {
+                s1+=s[i];
+            }
+        }
+        for(i=0;i<s1.size();i++)
+        {
+            if(st.size()>0 && s1[i]==')' && st.top()=='(')
+            {
+                st.pop();
+            }
+            else if(st.size()>0 && s1[i]==']' && st.top()=='[')
+            {
+                st.pop();
+            }
+            else
+            {
+                st.push(s1[i]);
+            }
+        }
+        if(st.empty())
+        {
+            cout<<"Yes"<<endl;
+        }
+        else
+        {
+            cout<<"No"<<endl;
+        }
+        while(!st.empty())//For clear stack
+        {
+            st.pop();
+        }
+        s.clear();
+        s1.clear();
+    }
+    return 0;
+}
