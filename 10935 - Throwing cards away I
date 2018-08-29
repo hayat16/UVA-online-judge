@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    long long int n,i,x,y;
+    queue<int>q;
+    vector<int>v;
+    while(cin>>n)
+    {
+        if(n==0)
+        {
+            break;
+        }
+        for(i=1; i<=n; i++)
+        {
+            q.push(i);
+        }
+        while(q.size()!=1)
+        {
+            x=q.front();
+            v.push_back(x);
+            q.pop();
+            y=q.front();
+            q.push(y);
+            q.pop();
+        }
+        cout<<"Discarded cards:";
+        for(i=0; i<v.size(); i++)
+        {
+            if(i==0)
+            {
+                cout<<" ";
+            }
+            cout<<v[i];
+            if(i!=v.size()-1)
+            {
+                cout<<", ";
+            }
+        }
+        cout<<endl;
+        cout<<"Remaining card: "<<q.front()<<endl;
+        while(!q.empty())//For clear queue
+        {
+            q.pop();
+        }
+        v.clear();
+    }
+    return 0;
+}
+
