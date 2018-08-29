@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    long long int cnt=0,a,b,c,t;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a>>b>>c;
+        if(a<=20 && b<=20 && c<=20)
+        {
+            cout<<"Case "<<++cnt<<": good"<<endl;
+        }
+        else
+        {
+            cout<<"Case "<<++cnt<<": bad"<<endl;
+        }
+    }
+    return 0;
+}
