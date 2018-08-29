@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    stack<string>st;
+    string s1,s2;
+    long long int i,j,n;
+    cin>>n;
+    while(n--)
+    {
+        cin>>s1;
+        if(s1=="Sleep")
+        {
+            cin>>s2;
+            st.push(s2);
+        }
+        else if(s1=="Kick" && st.empty())
+        {
+            continue;
+        }
+        else if(s1=="Kick" && !st.empty())
+        {
+            st.pop();
+        }
+        else if(s1=="Test" && !st.empty())
+        {
+            cout<<st.top()<<endl;
+        }
+        else
+        {
+            cout<<"Not in a dream"<<endl;
+        }
+    }
+    s1.clear();
+    s2.clear();
+    while(!st.empty())
+    {
+        st.pop();
+    }
+    return 0;
+}
