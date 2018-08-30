@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+{
+    vector<int>v;
+    vector<int>v1;
+    long long int i,test,t1,t2,F,A,ct1,ct2,ct3,b1,sum,average,total,c=0,max,loc;
+    cin>>test;
+    while(test--)
+    {
+        sum=0;
+        total=0;
+         max=0;//AS ct out of 20
+        cin>>t1>>t2>>F>>A>>ct1>>ct2>>ct3;
+        v.push_back(ct1);
+        v.push_back(ct2);
+        v.push_back(ct3);
+        for(i=0; i<v.size(); i++)
+        {
+            if(v[i]>max)
+            {
+                max=v[i];
+                loc=i;
+            }
+        }
+        v1.push_back(max);
+        long long m=0;//for finding maximum
+        for(i=0; i<v.size(); i++)
+        {
+            if(i!=loc && v[i]>m )
+            {
+                m=v[i];
+            }
+        }
+        v1.push_back(m);
+        sum=v1[0]+v1[1];
+        average=sum/2;
+        total=t1+t2+F+A+average;
+        if(total>=90)
+        {
+            cout<<"Case "<<++c<<": A"<<endl;
+        }
+        else  if(total>=80 && total<90)
+        {
+            cout<<"Case "<<++c<<": B"<<endl;
+        }
+        else  if(total>=70 && total<80)
+        {
+            cout<<"Case "<<++c<<": C"<<endl;
+        }
+        else  if(total>=60 && total<70)
+        {
+            cout<<"Case "<<++c<<": D"<<endl;
+        }
+        else
+        {
+            cout<<"Case "<<++c<<": F"<<endl;
+        }
+        v.clear();
+        v1.clear();
+    }
+    return 0;
+}
